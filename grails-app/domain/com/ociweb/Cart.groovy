@@ -12,12 +12,8 @@ class Cart {
 
     static namedQueries = {
 
-        latest {
-            order 'dateCreated', 'desc'
-        }
-
         latestByUser {
-            latest()
+            order 'dateCreated', 'desc'
             projections {
                 max("id")
                 groupProperty("user")
